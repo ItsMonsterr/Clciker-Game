@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gold Miner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Styles.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+  <!-- Background element -->
+  <div class="background"></div>
+
+  <div class="content">
+    <div class="gems">Gems: 0</div> <!-- Gems text -->
+    <div class="gold-info">
+      <p id="gold" class="gold-amount">0 Gold</p>
+      <div class="gold-text">
+        <p id="goldPerClick" class="small-text gold-text italic-text">+ 1 Gold per click</p>
+        <p id="goldPerSecond" class="small-text gold-text italic-text">+ 0 Gold per second</p>
+      </div>
+    </div>
+    <!-- Use only the image without any text -->
+    <img src="Pickaxe.png" alt="Mine Gold" onclick="mineGold()">
+    <button onclick="buyGoldPerClick()" id="perClickUpgrade">Upgrade Pickaxe (Currently Level 1) Cost: 10 Gold</button>
+  </div>
+  <!-- Random message element -->
+<div id="randomMessage" class="random-message hidden" onclick="handleRandomMessageClick()"></div>
+
+
+  <script src="main.js" charset="utf-8" type="text/javascript"></script>
+</body>
+</html>
