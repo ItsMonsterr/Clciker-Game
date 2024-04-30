@@ -1,0 +1,85 @@
+/* Background CSS */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('1920.1.png'); /* Replace with your image reference name */
+  background-size: 100% 100%; /* Adjust the horizontal and vertical sizes */
+  background-position: center;
+  z-index: -1; /* Ensure the background is behind other content */
+}
+
+/* Your existing CSS code */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #333; /* Set a plain background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif; /* Use Bebas Neue font */
+  color: white;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.gold-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gold-amount {
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.gold-text {
+  display: flex;
+}
+
+.small-text {
+  font-size: 12px; /* Adjust the font size as needed */
+  margin: 0 5px; /* Adjust the margin between the text elements */
+}
+
+.italic-text {
+  font-style: italic; /* Make the text italic */
+}
+
+.random-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  transition: opacity 0.5s; /* Smooth transition for hiding the message */
+}
+
+/* Hide the random message by default */
+.hidden {
+  opacity: 0;
+  pointer-events: none; /* Disable pointer events */
+}
+
+
+.gems {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 16px;
+}
