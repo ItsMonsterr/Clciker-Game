@@ -76,10 +76,25 @@ body {
   pointer-events: none; /* Disable pointer events */
 }
 
-
 .gems {
   position: absolute;
   top: 10px;
   left: 10px;
   font-size: 16px;
+}
+
+/* Save button CSS */
+.save-button {
+  position: fixed;
+  top: 50%;
+  left: 10px; /* Adjust left position as needed */
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1; /* Ensure the button is above other content */
 }
