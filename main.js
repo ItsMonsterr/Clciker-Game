@@ -7,6 +7,81 @@ var gameData = {
   level: 1 // Current level of the pickaxe
 };
 
+// Function to load game data from local storage
+function loadGameData() {
+  // Retrieve saved game data JSON string from local storage
+  var jsonData = localStorage.getItem('gameData');
+  
+  // Check if there is any saved game data
+  if (jsonData) {
+    // Parse the JSON string to convert it back to a JavaScript object
+    var savedGameData = JSON.parse(jsonData);
+    
+    // Update the game data object with the saved data
+    gameData.gold = savedGameData.gold;
+    gameData.gems = savedGameData.gems;
+    gameData.goldPerClick = savedGameData.goldPerClick;
+    gameData.goldPerClickCost = savedGameData.goldPerClickCost;
+    gameData.level = savedGameData.level;
+    
+    // Update the displayed game data
+    updateGoldDisplay();
+    updateGemsDisplay();
+    updateUpgradeButton(); // Update the upgrade button text
+    updateGoldPerClickDisplay();
+    updateGPSDisplay();
+    
+    // Update the displayed gem count immediately
+    updateGemDisplay();
+  }
+}
+
+// Function to save game data
+function saveGameData() {
+  // Convert game data object to JSON string
+  var jsonData = JSON.stringify(gameData);
+  
+  // Save JSON string to local storage
+  localStorage.setItem('gameData', jsonData);
+}
+
+// Function to save game data every 10 seconds
+function autoSaveGameData() {
+  setInterval(function() {
+    saveGameData();
+  }, 10000); // Save every 10 seconds
+}
+
+// Call the autoSaveGameData function to begin auto-saving
+autoSaveGameData();
+
+// Event listener for save button
+document.getElementById("saveButton").addEventListener("click", saveGameData);
+
+// Load game data when the page is loaded
+window.addEventListener("load", loadGameData);
+
+// Function to reset the game data to its initial state
+function resetGameData() {
+  // Set game data properties to their initial values
+  gameData.gold = 0;
+  gameData.gems = 0;
+  gameData.goldPerClick = 1;
+  gameData.goldPerClickCost = 10;
+  gameData.level = 1;
+
+  // Update the displayed game data
+  updateGoldDisplay();
+  updateGemsDisplay();
+  updateUpgradeButton();
+  updateGoldPerClickDisplay();
+  updateGPSDisplay();
+  updateGemDisplay();
+
+  // Clear the saved game data from local storage
+  localStorage.removeItem('gameData');
+}
+
 // Function to mine gold when the pickaxe is clicked
 function mineGold() {
   gameData.gold += gameData.goldPerClick; // Increment gold by goldPerClick
@@ -36,8 +111,11 @@ function updateGoldDisplay() {
 
 // Function to update the displayed gems amount
 function updateGemsDisplay() {
-  document.getElementById("gems").innerHTML = gameData.gems + " Gems";
+  // Find the gems element by its class and update its text content
+  document.querySelector(".gems").textContent = "Gems: " + gameData.gems;
 }
+
+
 
 // Function to update the displayed gold per click value
 function updateGoldPerClickDisplay() {
@@ -83,8 +161,7 @@ function addGems(amount) {
 startGameLoop();
 
 // Define random message element
-var randomMessageElement = document.getElementById("randomMessage");
-
+var randomMessageElement = document.querySelector(".random-message");
 
 // Function to show the random message
 function showRandomMessage() {
@@ -150,7 +227,6 @@ function updateGemDisplay() {
   // Find the gems element by its class and update its text content
   document.querySelector(".gems").textContent = "Gems: " + gameData.gems;
 }
-
 
 // Call the function to display the random message initially
 displayRandomMessage();
