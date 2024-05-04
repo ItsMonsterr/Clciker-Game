@@ -5,16 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gold Miner</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="Styles.css"> <!-- Link to external CSS file -->
 </head>
 <body>
+  <div class="brown-bar"></div>
+  <div class="coin-container">
+    <img src="GameCoin.png" alt="Coin" class="coin-image">
+    <p id="gold" class="gold-amount">0</p>
+  </div>
   <!-- Background element -->
   <div class="background"></div>
-
   <div class="content">
     <div class="gems">Gems: 0</div> <!-- Gems text -->
     <div class="gold-info">
-      <p id="gold" class="gold-amount">0 Gold</p>
       <div class="gold-text">
         <p id="goldPerClick" class="small-text gold-text italic-text">+ 1 Gold per click</p>
         <p id="goldPerSecond" class="small-text gold-text italic-text">+ 0 Gold per second</p>
