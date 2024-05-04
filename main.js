@@ -106,7 +106,7 @@ function buyGoldPerClick() {
 
 // Function to update the displayed gold amount
 function updateGoldDisplay() {
-  document.getElementById("gold").innerHTML = gameData.gold + " Gold";
+  document.getElementById("gold").textContent = gameData.gold;      
 }
 
 // Function to update the displayed gems amount
