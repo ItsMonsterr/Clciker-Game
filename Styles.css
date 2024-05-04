@@ -5,8 +5,8 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url('1920.1.png'); /* Replace with your image reference name */
-  background-size: 100% 100%; /* Adjust the horizontal and vertical sizes */
+  background-image: url('Mine3.png'); /* Replace with your image reference name */
+  background-size: contain; /* Adjust the horizontal and vertical sizes */
   background-position: center;
   z-index: -1; /* Ensure the background is behind other content */
 }
@@ -25,11 +25,11 @@ body {
   color: white;
 }
 
-.content {
+.content { /* The black box */
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(54, 23, 139, 0.5);
   padding: 20px;
   border-radius: 10px;
 }
@@ -37,11 +37,7 @@ body {
 .gold-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.gold-amount {
-  margin-bottom: 10px; /* Adjust the margin as needed */
+  align-items: center; /* Center items vertically */
 }
 
 .gold-text {
@@ -78,7 +74,7 @@ body {
 
 .gems {
   position: absolute;
-  top: 10px;
+  top: 200px; /* Adjust this value to move it downwards */
   left: 10px;
   font-size: 16px;
 }
@@ -97,4 +93,40 @@ body {
   border-radius: 5px;
   cursor: pointer;
   z-index: 1; /* Ensure the button is above other content */
+}
+
+.brown-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background-color: brown;
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Add this line to create space between items */
+  padding: 0 20px; /* Add padding for spacing */
+  z-index: 1; /* Adjust z-index as needed */
+}
+
+.coin-container { /* This container is for the Gold display, this includes the coin image and gold amount */
+  position: fixed;
+  top: 0px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  z-index: 2; /* Adjust z-index as needed */
+}
+
+.coin-image {
+  width: 75px; /* Adjust width as needed */
+  height: 75px; /* Adjust height as needed */
+  margin-right: 0px; /* Add margin between the coin image and the gold amount */
+}
+
+.gold-amount {
+  font-size: 28px; /* Adjust font size as needed */
+  color: #FFD700; /* Set the color to gold */
+  font-family: 'Bebas Neue', sans-serif; /* name of font here */
+  font-weight: bolder;
 }
